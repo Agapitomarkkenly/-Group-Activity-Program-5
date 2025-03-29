@@ -1,0 +1,71 @@
+#include <iostream>
+using namespace std;
+
+// Function to input and display the name of the user
+void getUserName() {
+    string name;
+    cout << "Enter the name of the user: ";
+    cin >> name;
+    cout << "Hello " << name << endl;
+}
+
+// Function to ask for two numbers
+void getTwoNumbers(double &num1, double &num2) {
+    cout << "Enter two numbers: " << endl;
+    cin >> num1 >> num2;
+}
+
+// Function to add the two numbers
+double addNumbers(double num1, double num2) {
+    return num1 + num2;
+}
+
+// Function to subtract the second number from the first number
+double subtractNumbers(double num1, double num2) {
+    return num1 - num2;
+}
+
+// Function to multiply the two numbers
+double multiplyNumbers(double num1, double num2) {
+    return num1 * num2;
+}
+
+// Function to divide the first number by the second number
+double divideNumbers(double num1, double num2) {
+    if (num2 != 0)
+        return num1 / num2;
+    else
+        return 0; // To handle division by zero
+}
+
+// Function to get the modulus of the first number
+int modulusOfFirstNumber(double num1, double num2) {
+    return static_cast<int>(num1) % static_cast<int>(num2);  // Casting to int for modulus
+}
+
+// Main function to put everything together
+int main() {
+    getUserName();  // Get and display user's name
+
+    double num1, num2;
+    getTwoNumbers(num1, num2);  // Get two numbers from the user
+
+    // Perform the arithmetic operations
+    double sum = addNumbers(num1, num2);
+    double diff = subtractNumbers(num1, num2);
+    double prod = multiplyNumbers(num1, num2);
+    double quotient = divideNumbers(num1, num2);
+    int modulus = modulusOfFirstNumber(num1, num2);
+
+    // Display the results
+    cout << "The sum of two numbers is: " << sum << endl;
+    cout << "The difference of two numbers is: " << diff << endl;
+    cout << "The product of two numbers is: " << prod << endl;
+    if (num2 != 0)
+        cout << "The quotient of two numbers is: " << quotient << endl;
+    else
+        cout << "The quotient of two numbers is: Division by zero is not allowed." << endl;
+    cout << "The modulus of the first number is: " << modulus << endl;
+
+    return 0;
+}
